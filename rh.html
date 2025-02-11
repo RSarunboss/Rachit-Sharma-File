@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Colorful Personal Webpage</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b); /* Bright gradient colors */
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            width: 100%;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background-color: #ff4b2b; /* Warm red color */
+            width: 80%;
+            max-width: 900px;
+            margin: 20px 0;
+            padding: 12px 0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #FFD700; /* Golden color */
+            color: #333;
+        }
+
+        section {
+            width: 80%;
+            max-width: 1000px;
+            margin: 30px 0;
+            padding: 40px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* About Section - Purple & Yellow Gradient */
+        .about {
+            background: linear-gradient(45deg, #8a2be2, #ffea00);
+            color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Education Section - Teal & Blue Gradient */
+        .education {
+            background: linear-gradient(45deg, #00bfae, #0077b6);
+            color: white;
+        }
+
+        /* Projects Section - Green Gradient */
+        .projects {
+            background: linear-gradient(45deg, #32cd32, #228b22);
+            color: white;
+        }
+
+        /* Skills Section - Orange & Pink Gradient */
+        .skills {
+            background: linear-gradient(45deg, #ff6f61, #ff5e62);
+            color: white;
+        }
+
+        /* Contact Section - Blue & Pink Gradient */
+        .contact {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+        }
+
+        .contact h2, .contact h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .contact a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        form div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        form button {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            background-color: #FFD700; /* Golden color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #FF7A00; /* Orange color */
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            nav {
+                width: 90%;
+            }
+
+            section {
+                width: 90%;
+                margin: 20px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            form button {
+                width: 100%;
+            }
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Webpage</h1>
+</header>
+
+<nav>
+    <a href="#about">About Me</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <img src="RACHIT.jpg" class="profile-img">
+        <p>Hello! I am Rachit Kumar Sharma A passionate and strategic thinker with a strong background in chess, online gaming, web design, and coding. I’ve always had a love for problem-solving, whether it's strategizing on the chessboard, tackling complex coding challenges, or creating intuitive websites. With a keen interest in web development, I’ve developed a solid foundation in HTML, CSS, and JavaScript, and I'm always eager to learn and build new projects.
+
+</p>
+    </div>
+</section>
+
+<section id="education" class="education">
+    <h2>Education</h2>
+    <p>In terms of education, I am committed to furthering my knowledge in both technology and strategic thinking, blending my academic learning with hands-on experience. I continue to pursue opportunities to expand my skills in web development, coding, and other tech fields, staying up to date with the latest trends.
+
+</p>
+</section>
+
+<section id="projects" class="projects">
+    <h2>Projects</h2>
+    <ul>
+        <li><strong>Resume:I can make resume using HTML, CSS, Javascripts.</li>
+        <li><strong>Websites: I can make basic website and program using C,C++.</li>
+        <li><strong>App Development: I have learned basic about app development .</li>
+    </ul>
+</section>
+
+<section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>JavaScript (Node.js)</li>
+        <li>Web Development (HTML, CSS, JS)</li>
+        <li>Machine Learning (C, C++)</li>
+        <li>Database Management (SQL, DBMS )</li>
+        <li>Version Control (Git, GitHub,Figma)</li>
+    </ul>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Feel free to reach out if you'd like to connect, collaborate, or simply chat about technology!</p>
+    <p>📧 Email: <strong>rachits886@gmail.com</strong></p>
+    <p>📱 Phone: <strong>+91 70291 07920</strong></p>
+    <p>🔗 LinkedIn: <a href="https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=rachit-sharma-7a4071333">linkedin.com/in/yourprofile</a></p>
+    <p>🐙 GitHub: <a href="https://github.com/RSarunboss" target="_blank">github.com/yourusername</a></p>
+    <p>🏠 Address: <strong>[ Madhopur Motihari( Bihar)]</strong></p>
+
+    <h3>Contact Me Directly</h3>
+    <form action="your-backend-script.php" method="POST">
+        <div>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 My Personal Webpage | <a href="#about">Back to top</a></p>
+</footer>
+
+<script>
+    // Smooth scroll functionality for navigation
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
